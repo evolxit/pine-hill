@@ -1,0 +1,202 @@
+---
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+import Content from '~/components/widgets/Content.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Facilities',
+  items: [],
+};
+
+const {
+  columns = 2,
+  facilities = [
+    {
+      title: 'Complimentary Breakfast',
+    },
+    {
+      title: 'Restaurant and Bar',
+    },
+    {
+      title: 'Souvenir Shop',
+    },
+    {
+      title: 'Meeting Room',
+    },
+    {
+      title: 'Free Wifi',
+    },
+    {
+      title: 'Hot Water Swimming Pool with Jacuzzi and Pool Bar',
+    },
+    {
+      title: 'Fitness Center and Sauna Room',
+    },
+    {
+      title: 'Business Center',
+    },
+  ],
+  services = [
+    {
+      title: 'Kalaw Sightseeing',
+    },
+    {
+      title: 'Laundry Service',
+    },
+    {
+      title: 'Car Rental Service',
+    },
+    {
+      title: 'Complimentary Bicycle Service',
+    },
+    {
+      title: 'Karaoke',
+    },
+    {
+      title: 'Transportation Service',
+    },
+    {
+      title: 'Local Trekking Guide Services',
+    },
+    {
+      title: 'Spa',
+    },
+  ],
+} = Astro.props;
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Facilities" title="Our Facilities" subtitle="" />
+
+  <!-- component -->
+  <div class="w-full">
+    <div class="w-9/12 mx-auto">
+      <div class="text-box text-sm text-gray-500 text-justify">
+        At the PINE HILL RESORT (KALAW), we provide you with the best of guest facilities, ensuring your holiday is as
+        smooth as possible. Our state-of-the-art fitness centre will cater to all fitness levels and it also features a
+        sauna to unwind in after your work out. Our team of expert instructors are on hand at all times ensuring you
+        have a safe and enjoyable work-out. Why not take a dip in the hot waters of our swimming pool, or relax whilst
+        sitting in our Jacuzzi. Indulge yourself in our spa and take advantage of our team who offer both traditional
+        and modern treatments. This full service our hotel also features laundry services. Our PINE HILL RESORT (KALAW)
+        offers a welcoming and helpful Tour desk who are always on hand to assist you in creating your perfect holiday.
+      </div>
+
+      <Content
+        isReversed
+        tagline=""
+        title=""
+        items={[]}
+        image={{
+          src: '/Dinning/Dinning2.jpg',
+          alt: 'Colorful Image',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">RESTAURANT</h3>
+          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+            Situated in the heart of one of Kalaw areas for dining, Pine Hill Resort has a beautiful Edwardian
+            restaurant, light-filled conservatory and cosy lounge bar. Here you can enjoy a range of meals, drinks and
+            snacks throughout the day, including English breakfast, Chinese Foods, Euporean Foods, Thail Foods and a
+            traditional Foods.
+          </p>
+        </Fragment>
+      </Content>
+
+      <Content
+        tagline=""
+        title=""
+        items={[]}
+        image={{
+          src: '/meeting/room1.jpg',
+          alt: 'Colorful Image',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
+            HOT WATER SWIMMING POOL & JACUZZI
+          </h3>
+          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+            Our swimming pool is the heated. The pool is heated to a constant 31 degrees Celsius, so it is always
+            delightful, even on cooler days. Surrounded by sun loungers, and adjoining manicured lawns, the outdoor pool
+            area is perfect where you can relax in style for sunbathing in summer. So you can enjoy a refreshing dip
+            whenever you choose.
+          </p>
+        </Fragment>
+      </Content>
+
+      <Content
+        isReversed
+        tagline=""
+        title=""
+        items={[]}
+        image={{
+          src: '/bangalow/Exterior2.jpg',
+          alt: 'Colorful Image',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
+            FITNESS CENTER & SAUNA ROOM
+          </h3>
+          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+            Exclusively for our resident guests, the Fitness Center features a useful variety of state-of-the-art
+            exercise equipment.
+          </p>
+        </Fragment>
+      </Content>
+
+      <div class="w-full flex">
+        <div class="flex-1 mr-5">
+          <span class="block bg-green-100 my-10 font-bold px-3 py-2 rounded">Facilities</span>
+          <ItemGrid
+            items={facilities}
+            columns={columns}
+            defaultIcon="tabler:check"
+            classes={{
+              container: `gap-y-1 md:gap-y-4 mb-10`,
+              panel: 'max-w-none text-gray-500',
+              title: 'text-sm font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+              description: 'text-sm dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2 ',
+              icon: 'flex h-5 w-5 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 px-1',
+              action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            }}
+          />
+        </div>
+        <div class="flex-1 ml-5">
+          <span class="block bg-green-100 my-10 font-bold px-3 py-2 rounded">Services</span>
+          <ItemGrid
+            items={services}
+            columns={columns}
+            defaultIcon="tabler:check"
+            classes={{
+              container: `gap-y-1 md:gap-y-4 mb-10`,
+              panel: 'max-w-none text-gray-500',
+              title: 'text-sm font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+              description: 'text-sm dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2 ',
+              icon: 'flex h-5 w-5 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 px-1',
+              action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .parent-div:hover .img-hover {
+      transform: scale(1.3);
+    }
+    /* .img-hover {
+                transform .2s;
+            } */
+    .parent-div {
+      /* width: 320px; */
+      /* height: 390px; */
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+</Layout>

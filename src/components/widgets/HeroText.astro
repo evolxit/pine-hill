@@ -1,6 +1,6 @@
 ---
-import type { CallToAction } from '~/types';
 import Button from '~/components/ui/Button.astro';
+import type { CallToAction } from '~/types';
 
 export interface Props {
   title?: string;
@@ -30,7 +30,7 @@ const {
         {
           tagline && (
             <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              class="text-base text-secondary-500 dark:text-blue-200 font-bold tracking-wide uppercase"
               set:html={tagline}
             />
           )

@@ -1,0 +1,190 @@
+---
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Deluxe Rooms',
+  items: [],
+};
+
+const {
+  columns = 2,
+  amenities = [
+    {
+      title: '51 Rooms',
+      description: ``,
+    },
+    {
+      title: 'Free Wi-Fi',
+      description: '',
+    },
+    {
+      title: 'Electronic Room Keys',
+      description: '',
+    },
+    {
+      title: 'Mini-bar',
+      description: '',
+    },
+    {
+      title: 'In-Room Safe Deposit Box',
+      description: '',
+    },
+    {
+      title: 'Home Theater (In Suite Only)',
+      description: '',
+    },
+    {
+      title: 'Refrigerator',
+      description: '',
+    },
+    {
+      title: 'Jaccuzi (In Suite Only)',
+      description: '',
+    },
+    {
+      title: 'Sauna (In Suite Only)',
+      description: '',
+    },
+    {
+      title: 'IDD Telephone',
+      description: '',
+    },
+    {
+      title: 'Complimentary Bottled Water',
+      description: '',
+    },
+    {
+      title: 'Coffee and Tea Making Facility',
+      description: '',
+    },
+    {
+      title: '24 hr Room Service',
+      description: '',
+    },
+  ],
+  features = [
+    {
+      title: 'Each rooms included LCD TV With International Satellite TV Channels',
+      description: ``,
+    },
+    {
+      title: 'All rooms are spacious and fully decorated with quality species of Myanmar wood',
+      description: '',
+    },
+    {
+      title: 'Two Way Air Conditioner (Hot and Cold)',
+      description: '',
+    },
+    {
+      title: '24 Hr Hot and Cold Running Water with full set of complimentary bathroom amenities',
+      description: '',
+    },
+  ],
+} = Astro.props;
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Rooms" title="Deluxe Rooms" subtitle="" />
+
+  <!-- component -->
+  <div class="w-full">
+    <div class="w-9/12 mx-auto">
+      <div class="text-box text-sm text-gray-500 text-center w-2/3 mx-auto mb-10">
+        The Deluxe Room is a luxurious hotel room with a large and comfortable bed. The extra space and technological
+        gadgets in this light and luxurious hotel room make it a comfortable setting for your luxury holiday or business
+        trip to Kalaw in Myanmar.
+      </div>
+    </div>
+    <div class="lg:w-9/12 md:w-full mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-2 place-items-center">
+      <div class="relative shadow-lg rounded-lg cursor-pointer parent-div h-40 w-64">
+        <img
+          style="transition: transform 0.8s ease;"
+          src="/bangalow/102-indoor.jpg"
+          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          class="w-full h-auto object-cover rounded img-hover"
+        />
+      </div>
+      <div class="relative shadow-lg rounded-lg cursor-pointer parent-div h-40 w-64">
+        <img
+          style="transition: transform 0.8s ease;"
+          src="/bangalow/102-indoor.jpg"
+          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          class="w-full h-auto object-cover rounded img-hover"
+        />
+      </div>
+      <div class="relative shadow-lg rounded-lg cursor-pointer parent-div h-40 w-64">
+        <img
+          style="transition: transform 0.8s ease;"
+          src="/bangalow/102-indoor.jpg"
+          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          class="w-full h-auto object-cover rounded img-hover"
+        />
+      </div>
+      <div class="relative shadow-lg rounded-lg cursor-pointer parent-div h-40 w-64">
+        <img
+          style="transition: transform 0.8s ease;"
+          src="/bangalow/102-indoor.jpg"
+          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          class="w-full h-auto object-cover rounded img-hover"
+        />
+      </div>
+    </div>
+    <div class="w-9/12 mx-auto">
+      <div class="w-full flex">
+        <div class="flex-1 mr-5">
+          <span class="block bg-green-100 my-10 font-bold px-3 py-2 rounded">Room Amenities</span>
+
+          <ItemGrid
+            items={amenities}
+            columns={columns}
+            defaultIcon="tabler:check"
+            classes={{
+              container: `gap-y-1 md:gap-y-4 mb-10`,
+              panel: 'max-w-none text-gray-500',
+              title: 'text-sm font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+              description: 'text-sm dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2 ',
+              icon: 'flex h-5 w-5 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 px-1',
+              action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            }}
+          />
+        </div>
+        <div class="flex-1 ml-5">
+          <span class="block bg-green-100 my-10 font-bold px-3 py-2 rounded">Room Features</span>
+
+          <ItemGrid
+            items={features}
+            columns={1}
+            defaultIcon="tabler:check"
+            classes={{
+              container: `gap-y-1 md:gap-y-4 mb-10`,
+              panel: 'max-w-none text-gray-500',
+              title: 'text-sm font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+              description: 'text-sm dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2 ',
+              icon: 'flex h-5 w-5 items-center justify-center rounded bg-blue-600 dark:bg-blue-700 text-gray-50 px-1',
+              action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .parent-div:hover .img-hover {
+      transform: scale(1.3);
+    }
+    /* .img-hover {
+            transform .2s;
+        } */
+    .parent-div {
+      /* width: 320px; */
+      /* height: 390px; */
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+</Layout>

@@ -3,18 +3,20 @@ import '~/assets/styles/tailwind.css';
 
 import { I18N } from 'astrowind:config';
 
-import CommonMeta from '~/components/common/CommonMeta.astro';
-import Favicons from '~/components/Favicons.astro';
-import CustomStyles from '~/components/CustomStyles.astro';
+import Analytics from '~/components/common/Analytics.astro';
 import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
+import CommonMeta from '~/components/common/CommonMeta.astro';
 import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
-import Analytics from '~/components/common/Analytics.astro';
-import BasicScripts from '~/components/common/BasicScripts.astro';
+import CustomStyles from '~/components/CustomStyles.astro';
+import Favicons from '~/components/Favicons.astro';
 
 // Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
 
+import Header from '~/components/widgets/Header.astro';
+import { headerData } from '~/navigation';
 import type { MetaData as MetaDataType } from '~/types';
 
 export interface Props {
@@ -38,9 +40,10 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <body class="antialiased text-default tracking-tight">
     <slot />
 
     <BasicScripts />
@@ -50,5 +53,7 @@ const { language, textDirection } = I18N;
         content-visibility: auto;
       }
     </style>
+
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
   </body>
 </html>

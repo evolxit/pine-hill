@@ -1,19 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'PineHill',
   ignoreTitleTemplate: true,
 };
 ---
@@ -21,379 +14,469 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-  >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
-    </Fragment>
+  <div class="w-full banner-area">
+    <div class="bg-black absolute w-full" style="min-height: 800px; z-index: 2; opacity:0.5"></div>
+    <img src="/resized/reception.jpg" class="w-full h-auto -mt-20" alt="" />
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
-    </Fragment>
-  </Hero>
+    <div class="top-24 absolute w-full" style="z-index: 3;">
+      <div class="w-1/3 mx-auto">
+        <span class="text-white text-sm block text-center bg-opacity-0 mt-20 mb-5">WELCOME TO</span>
+        <span class="text-white font-bold text-4xl block text-center bg-opacity-0">PineHill Resort Kalaw</span>
+        <span class="text-white text-sm block text-center bg-opacity-0 mt-5"
+          >If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You
+          may see some for as low as $.17 each.</span
+        >
 
-  <!-- Note Widget ******************* -->
+        <span
+          class="block w-1/4 text-center px-3 py-2.5 rounded bg-primary-500 text-white font-bold text-sm mt-10 mx-auto cursor-pointer hover:bg-primary-600"
+          >GET STARTED</span
+        >
+      </div>
+    </div>
+  </div>
 
-  <Note />
+  <div class="w-full my-20">
+    <div class="mx-auto w-9/12 mb-6">
+      <h3 class="text-center font-bold text-2xl text-gray-600 mb-3">Hotel Accomodation</h3>
+      <p class="text-center text-gray-400 mb-20 text-sm">
+        We all live in an age that belongs to the young at heart. Life that is becoming extremely fast
+      </p>
+    </div>
 
-  <!-- Features Widget *************** -->
+    <div class="lg:w-9/12 md:w-full mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-2 place-items-center">
+      <div class="max-w-sm relative shadow-lg rounded-lg cursor-pointer parent-div h-80 w-64">
+        <img
+          style="transition: transform 0.8s ease;"
+          src="/resized/101-indoor.jpg"
+          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
+        />
+        <span
+          class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
+          style="top:100px; margin-left:100px">BOOK NOW</span
+        >
+        <div
+          class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
+        >
+          <h1 class="text-lg font-semibold text-center text-primary-500">Superior Room</h1>
 
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
-  />
+          <span class="mt-2 block"><span class="font-bold">Room Types</span>: Single / Double / Triple</span>
+          <span class="mt-2 block"><span class="font-bold">No. of Room</span>: 26 Rooms</span>
+        </div>
+      </div>
+      <div class="max-w-sm relative shadow-lg rounded-lg cursor-pointer parent-div h-80 w-64">
+        <img
+          style="transition: transform 0.8s ease; object-fit: cover;"
+          src="/resized/102-indoor.jpg"
+          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
+        />
+        <span
+          class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
+          style="top:100px; margin-left:100px">BOOK NOW</span
+        >
+        <div
+          class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
+        >
+          <h1 class="text-lg font-semibold text-center text-primary-500">Deluxe Room</h1>
 
-  <!-- Content Widget **************** -->
+          <span class="mt-2 block"><span class="font-bold">Room Types</span>: Single / Double / Triple</span>
+          <span class="mt-2 block"><span class="font-bold">No. of Room</span>: 33 Rooms</span>
+        </div>
+      </div>
+      <div class="max-w-sm relative shadow-lg rounded-lg cursor-pointer parent-div h-80 w-64">
+        <img
+          style="transition: transform 0.8s ease; object-fit: cover;"
+          src="/resized/201-indoor.jpg"
+          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
+        />
+        <span
+          class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
+          style="top:100px; margin-left:100px">BOOK NOW</span
+        >
+        <div
+          class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
+        >
+          <h1 class="text-lg font-semibold text-center text-primary-500">Royal Family</h1>
 
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 4.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
+          <span class="mt-2 block"><span class="font-bold">Room Types</span>: Single</span>
+          <span class="mt-2 block"><span class="font-bold">No. of Room</span>: 1 Room</span>
+        </div>
+      </div>
+      <div class="max-w-sm relative shadow-lg rounded-lg cursor-pointer parent-div h-80 w-64">
+        <img
+          style="transition: transform 0.8s ease; object-fit: cover;"
+          src="/resized/201-indoor-2.jpg"
+          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
+        />
+        <span
+          class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
+          style="top:100px; margin-left:100px">BOOK NOW</span
+        >
+        <div
+          class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
+        >
+          <h1 class="text-lg font-semibold text-center text-primary-500">Royal Suite</h1>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
+          <span class="mt-2 block"><span class="font-bold">Room Types</span>: Single</span>
+          <span class="mt-2 block"><span class="font-bold">No. of Room</span>: 2 Room</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
+  <div class="w-full bg-gray-800 my-5 py-10">
+    <Features2
+      title="Royal Facilities"
+      subtitle="Who are in extremely love with eco friendly system."
+      tagline=""
+      items={[
+        {
+          title: 'Restaurant',
+          description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+          icon: 'flat-color-icons:template',
+        },
+        {
+          title: 'Bar',
+          description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+          icon: 'flat-color-icons:currency-exchange',
+        },
+        {
+          title: 'Souvenir Shop',
+          description:
+            "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+          icon: 'flat-color-icons:document',
+        },
+        {
+          title: 'Fitness Center',
+          description:
+            "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+          icon: 'flat-color-icons:gallery',
+        },
+        {
+          title: 'Suana Room',
+          description:
+            'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
+          icon: 'flat-color-icons:advertising',
+        },
+        {
+          title: 'Swimming Pool',
+          description:
+            'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+          icon: 'flat-color-icons:approval',
+        },
+
+        {
+          title: 'Meeting Room',
+          description:
+            "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+          icon: 'flat-color-icons:document',
+        },
+        {
+          title: 'Free Wifi',
+          description:
+            "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+          icon: 'flat-color-icons:document',
+        },
+        {
+          title: 'Business Center',
+          description:
+            "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+          icon: 'flat-color-icons:document',
+        },
+      ]}
+    >
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment>
+    </Features2>
+  </div>
+
+  <!-- Content Widget **************** -->
+
+  <div class="lg:w-9/12 mx-auto">
+    <Content
+      isReversed
+      tagline=""
+      title=""
+      items={[]}
+      image={{
+        src: '/bangalow/Exterior2.jpg',
+        alt: 'Colorful Image',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">About Us</h3>
+        <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">Our History</h3>
+        <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">Mission & Vision</h3>
+        <p class="ml-10 mt-10 md:text-sm text-gray-500">
+          Inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
+          especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond
+          reproach. inappropriate behavior is often laughed.
+        </p>
+        <span class="ml-10 inline-block mt-10 px-5 py-2 bg-primary-500 rounded text-white text-sm font-semibold"
+          >Contact Us</span
+        >
+      </Fragment>
+    </Content>
+  </div>
+
+  <Content
+    isAfterContent
     items={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        title: 'Kalaw Sightseeing',
+        description: ``,
       },
       {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+        title: 'Laundry Service',
+        description: '',
       },
       {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
+        title: 'Car Rental Service',
+        description: '',
       },
       {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
+        title: 'Complimentary Bicycle Service',
+        description: '',
       },
       {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
+        title: 'Karaoke',
+        description: '',
       },
       {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
+        title: 'Transportation Service',
+        description: '',
       },
       {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
+        title: 'Local Trekking Guide Services',
+        description: '',
       },
       {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
+        title: 'Spa',
+        description: '',
       },
     ]}
+    image={{
+      src: '/Dinning/Dinning1.jpg',
+      alt: 'Blueprint Image',
+    }}
   >
+    <Fragment slot="content">
+      <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">Guest Services</h3>
+    </Fragment>
+
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-white dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Content>
 
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+  <div class="w-full bg-blue-50">
+    <Testimonials
+      title="Words from real customers"
+      subtitle="See what other people are saying about Pine Hill Resort."
+      testimonials={[
+        {
+          testimonial: `Pleasant surprise large rooms top shower & other facilities. I believe we were in newer rooms
+Heated pool , clean & a good base to look around Kalaw.
+Also top massage for wife. Rest for breakfast was OK`,
+          name: 'Su T. of New Zealand',
+          job: 'September 2015',
+          image: {
+            src: '/user.png',
+            alt: 'Emily Kennedy Image',
+          },
+        },
+        {
+          testimonial: `Pleasant surprise large rooms top shower & other facilities. I believe we were in newer rooms
+Heated pool , clean & a good base to look around Kalaw.
+Also top massage for wife. Rest for breakfast was OK`,
+          name: 'Sarah Hansen',
+          job: 'Photographer',
+          image: {
+            src: '/user.png',
+            alt: 'Sarah Hansen Image',
+          },
+        },
+        {
+          testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
+          name: 'John C',
+          job: 'October 2015',
+          image: {
+            src: '/user.png',
+            alt: 'Mark Wilkinson Image',
+          },
+        },
+      ]}
+      callToAction={{
         target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
+        text: 'More testimonials...',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:chevron-right',
+      }}
+    />
+  </div>
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
+  <div class="w-full my-10" id="popular">
+    <div class="w-9/12 mx-auto mb-10">
+      <h3 class="text-center font-bold text-2xl text-gray-600 mb-3">Nearby Kalaw</h3>
+      <p class="text-center text-gray-400 text-sm">
+        Kalaw stands 1320 meter above sea level on the western edge of the Shan Plateau. It is 70km west of Taunggyi,
+        about halfway along the Thazi-Taunggyi road. This was a popular hill station in the British days and it is still
+        a peaceful and quiet place. It is also pleasantly cool and a good place for hiking amid gnarled pines, bamboo
+        groves and rugged mountain scenes. A former colonial British hill station, this small-town offers cool
+        temperatures and plenty of trekking opportunities. The population is a mix of Shan, Indian Muslims, Bamars and
+        Nepalis (Gurkhas retired from British military service), many of whom are missionary educated. Traveling by car,
+        it's about two hours west of Nyaungshwe on the western edge of the Shan hills.
+      </p>
+    </div>
+    <div class="flex w-9/12 mx-auto">
+      <div class="max-w-lg px-3">
+        <div
+          class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 pb-10 parent-div relative"
+          style="height: 700px;"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg img-hover"
+              style="transition: transform 0.8s ease;"
+              src="https://flowbite.com/docs/images/blog/image-1.jpg"
+              alt=""
+            />
+          </a>
+          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white" style="height: 500px;">
+            <a href="#">
+              <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">Shwe U Min Pagoda</h5>
+            </a>
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
+              >Pine Hill Resort is less than 3 km to Shwe U Min Pagoda</span
+            >
+            <p class="font-normal text-xs text-gray-600 mb-3 text-justify">
+              Set inside a natural cave dripping with golden Buddha statues, Shwe U Min Pagoda is about half a mile
+              south-west of the Kalaw Market.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-lg px-3">
+        <div
+          class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 pb-10 parent-div relative"
+          style="height: 700px;"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg img-hover"
+              style="transition: transform 0.8s ease;"
+              src="https://flowbite.com/docs/images/blog/image-1.jpg"
+              alt=""
+            />
+          </a>
+          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white" style="height: 500px;">
+            <a href="#">
+              <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">Palaung Village</h5>
+            </a>
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
+              >Pine Hill Resort is less than 3 km to Palaung Village</span
+            >
+            <p class="font-normal text-xs text-gray-600 mb-3 text-justify">
+              Distance: 6.6 Km The Palaungs, who mainly live in the Kalaw area in Shan State, belong to the Mon-Khmer.
+              It takes about two to four hours through the hills to the village of the Palaung tribe. At first a steep
+              track leads down into a narrow valley where the Palaung cultivate tea, damsons and mangoes on the
+              hillsides. The track across the valley floor and then climbs very steeply again to the Palaung village of
+              Pinnabin, which sits on top of a hill.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-lg px-3">
+        <div
+          class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 pb-10 parent-div relative"
+          style="height: 700px;"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg img-hover"
+              style="transition: transform 0.8s ease;"
+              src="https://flowbite.com/docs/images/blog/image-1.jpg"
+              alt=""
+            />
+          </a>
+          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white" style="height: 500px;">
+            <a href="#">
+              <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">
+                Nee Paya <span class="text-xs">(Bamboo Buddha Statue)</span>
+              </h5>
+            </a>
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
+              >Pine Hill Resort is less than 3 km to Nee Paya (Bamboo Buddha Statue)</span
+            >
+            <p class="font-normal text-xs text-gray-600 mb-3 text-justify">
+              Distance: 5.9 Km It lies in Pinmagon Monastery. of Pinmagon Village. Kalaw Township. south of Shan State.
+              It was estimated to have been established in First Inn-wa Period over 500 years ago. The donors were hard
+              to ascertain and there were no records but its head was sharp upright. its ears were not touching the
+              shoulders and the nether garment was covered for the whole of its lower parts. So it was believed to be
+              historic. It is eight feet four inches high. It is noted for its longevity. its prevention of fire. and
+              its wishgranting powers. Occasionally radiation seemed to come from the pagoda at the front of image. The
+              image is now lacquered and gilded all the way.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-lg px-3">
+        <div
+          class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 pb-10 parent-div relative"
+          style="height: 700px;"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg img-hover object-cover"
+              style="transition: transform 0.8s ease;"
+              src="https://flowbite.com/docs/images/blog/image-1.jpg"
+              alt=""
+            />
+          </a>
+          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white" style="height: 500px;">
+            <a href="#">
+              <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">Myin Ma Hti Cave</h5>
+            </a>
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
+              >Pine Hill Resort is less than 3 km to Myin Ma Hti Cave</span
+            >
+            <p class="font-normal text-xs text-gray-600 mb-3 text-justify">
+              Distance: 7 minuts walk The winding complex of natural caves and tunnels is filled to bursting point with
+              Buddha Images in an astonishing variety of shapes and sizes. The Myin Ma Hti cave is 1028ft (313m) long
+              from the entrance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .banner-area {
+      height: 800px;
+      position: relative;
+      overflow: hidden;
+    }
+    #popular .parent-div:hover .img-hover {
+      transform: scale(1.5) rotate(10deg);
+    }
+    .parent-div:hover .img-hover {
+      transform: scale(1.3);
+    }
+    /* .img-hover {
+            transform .2s;
+        } */
+    .parent-div {
+      /* width: 320px; */
+      /* height: 390px; */
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
 </Layout>

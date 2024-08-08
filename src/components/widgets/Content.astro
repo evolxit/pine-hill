@@ -1,10 +1,10 @@
 ---
-import type { Content as Props } from '~/types';
-import Headline from '../ui/Headline.astro';
-import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
+import type { Content as Props } from '~/types';
+import Headline from '../ui/Headline.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -41,7 +41,7 @@ const {
       subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
     }}
   />
-  <div class="mx-auto max-w-7xl p-4 md:px-8">
+  <div class="mx-auto max-w-5xl p-4 px-20 md:px-10">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="md:basis-1/2 self-center">
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
@@ -59,11 +59,11 @@ const {
           columns={columns}
           defaultIcon="tabler:check"
           classes={{
-            container: `gap-y-4 md:gap-y-8`,
-            panel: 'max-w-none',
-            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
+            container: `gap-y-1 md:gap-y-4`,
+            panel: 'max-w-none text-gray-500',
+            title: 'text-md font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            description: 'text-sm dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2 ',
+            icon: 'flex h-6 w-6 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 px-1',
             action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
           }}
         />

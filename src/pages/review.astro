@@ -1,0 +1,106 @@
+---
+import Contact from '~/components/widgets/Contact.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Reviews',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <!-- component -->
+  <div class="container mx-auto p-4 pt-20">
+    <Testimonials
+      title="Customer Reviews"
+      subtitle="See what other people are saying about Pine Hill Resort."
+      testimonials={[
+        {
+          testimonial: `The resort was nicely landscaped with varieties of local plants. The breakfast buffet was plentiful with chef to prepare your order either omelette or local food. It also offered freshly brewed coffee ( what a relief.....any other places we stayed only had hot water with instant coffee ). We needed to change a cabin because the aircon was not working. The staff were very friendly and helpful and accommodating.`,
+          name: 'Su T. of New Zealand',
+          job: 'September 2015',
+          image: {
+            src: '/user.png',
+            alt: 'Emily Kennedy Image',
+          },
+        },
+        {
+          testimonial: `The Pine Hill Resort is a very decent place to stay in Kalaw. There is nothing really impressive about it. But at the same time it offers nice, clean rooms with hot-water showers, a decent breakfast and good food for lunch. It actually also offers a gym and pool, though I didn’t try that. There is a fairly big meeting room as well with windows (not common standard in Myanmar), so it’s a good option for groups who want to meet in Kalaw for a workshop or business meeting. Overall, it’s definitely a good place to stay in Kalaw.`,
+          name: 'Franziska. of Germany',
+          job: 'September 2015',
+          image: {
+            src: '/user.png',
+            alt: 'Sarah Hansen Image',
+          },
+        },
+        {
+          testimonial: `This hotel consists of bungalows and apartments and is on the outskirts of the bustling market town of Kalaw. We were lucky enough to be there on a Friday which is. The weekly market day for the whole area which has about 300,000 inhabitants. It is well worth spending a couple of hours there and also trying to see the arrival and departure of a train from the nearby station.
+The room was a good size and clean and comfortable. No international TV. Breakfast was OK but nothing special.
+There was a decent - sized well kept pool- we swam in the pouring rain!
+The staff were friendly and efficient`,
+          name: 'John C',
+          job: 'October 2015',
+          image: {
+            src: '/user.png',
+            alt: 'Mark Wilkinson Image',
+          },
+        },
+        {
+          testimonial: `Pleasant surprise large rooms top shower & other facilities. I believe we were in newer rooms
+    Heated pool , clean & a good base to look around Kalaw.
+    Also top massage for wife. Rest for breakfast was OK`,
+          name: 'GJA45. of Australia',
+          job: 'September 2015',
+          image: {
+            src: '/user.png',
+            alt: 'Emily Kennedy Image',
+          },
+        },
+        {
+          testimonial: `This hotel had decent rooms with every sort of toiletries and the like. The room was large, pretty clean and comfortable.
+    The bathroom was, like the room, functional and an acceptable standard.
+    The hotel has a bar, a large draughty dining room where we had a reasonable breakfast and is in a nice location up on a hill - but a a bit out of town.
+    I'd call this a decent three star hotel which is quite OK for regional Myanmar.`,
+          name: 'Hazza. of Australia',
+          job: 'September 2015',
+          image: {
+            src: '/user.png',
+            alt: 'Sarah Hansen Image',
+          },
+        },
+        {
+          testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
+          name: 'John C',
+          job: 'October 2015',
+          image: {
+            src: '/user.png',
+            alt: 'Mark Wilkinson Image',
+          },
+        },
+      ]}
+    />
+
+    <Contact
+      id="form"
+      title="Write a review."
+      subtitle=""
+      inputs={[
+        {
+          type: 'text',
+          name: 'name',
+          label: 'Name',
+        },
+      ]}
+      textarea={{
+        label: 'Review',
+      }}
+      disclaimer={{
+        label:
+          "By submitting this review, I confirm that the contents of this review is based on my personal opinions of my stay at this hotel, and that I have not received any incentives by the hotel or any other parties to write this review. I agree that all reviews are subject to the hotel's approval before publication.",
+      }}
+      description=""
+      button="Submit"
+    />
+  </div>
+</Layout>
