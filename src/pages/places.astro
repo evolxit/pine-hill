@@ -1,0 +1,144 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Places',
+  items: [],
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Places" title="Nearby Kalaw" subtitle="" />
+
+  <!-- component -->
+  <div class="w-full">
+    <div class="w-9/12 mx-auto">
+      <div class="text-box text-sm text-gray-500 text-justify">
+        Kalaw stands 1320 meter above sea level on the western edge of the Shan Plateau. It is 70km west of Taunggyi,
+        about halfway along the Thazi-Taunggyi road. This was a popular hill station in the British days and it is still
+        a peaceful and quiet place. It is also pleasantly cool and a good place for hiking amid gnarled pines, bamboo
+        groves and rugged mountain scenes. A former colonial British hill station, this small-town offers cool
+        temperatures and plenty of trekking opportunities. The population is a mix of Shan, Indian Muslims, Bamars and
+        Nepalis (Gurkhas retired from British military service), many of whom are missionary educated. Traveling by car,
+        it's about two hours west of Nyaungshwe on the western edge of the Shan hills.
+      </div>
+
+      <Content
+        isReversed
+        tagline=""
+        title=""
+        items={[]}
+        image={{
+          src: '/Dinning/Dinning2.jpg',
+          alt: 'Colorful Image',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">Shwe U Min Pagoda</h3>
+          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+            Set inside a natural cave dripping with golden Buddha statues, Shwe U Min Pagoda is about half a mile
+            south-west of the Kalaw Market.
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic mt-10"
+              >Pine Hill Resort is less than 3 km to Shwe U Min Pagoda</span
+            >
+          </p>
+        </Fragment>
+      </Content>
+
+      <Content
+        tagline=""
+        title=""
+        items={[]}
+        image={{
+          src: '/meeting/room1.jpg',
+          alt: 'Colorful Image',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">Palaung Village</h3>
+          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+            Distance: 6.6 Km The Palaungs, who mainly live in the Kalaw area in Shan State, belong to the Mon-Khmer. It
+            takes about two to four hours through the hills to the village of the Palaung tribe. At first a steep track
+            leads down into a narrow valley where the Palaung cultivate tea, damsons and mangoes on the hillsides. The
+            track across the valley floor and then climbs very steeply again to the Palaung village of Pinnabin, which
+            sits on top of a hill.
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic mt-10"
+              >Pine Hill Resort is less than 3 km to Palaung Village</span
+            >
+          </p>
+        </Fragment>
+      </Content>
+
+      <Content
+        isReversed
+        tagline=""
+        title=""
+        items={[]}
+        image={{
+          src: '/bangalow/Exterior2.jpg',
+          alt: 'Colorful Image',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
+            Nee Paya <span class="text-xs">(Bamboo Buddha Statue)</span>
+          </h3>
+          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+            Distance: 5.9 Km It lies in Pinmagon Monastery. of Pinmagon Village. Kalaw Township. south of Shan State. It
+            was estimated to have been established in First Inn-wa Period over 500 years ago. The donors were hard to
+            ascertain and there were no records but its head was sharp upright. its ears were not touching the shoulders
+            and the nether garment was covered for the whole of its lower parts. So it was believed to be historic. It
+            is eight feet four inches high. It is noted for its longevity. its prevention of fire. and its wishgranting
+            powers. Occasionally radiation seemed to come from the pagoda at the front of image. The image is now
+            lacquered and gilded all the way.
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic mt-10"
+              >Pine Hill Resort is less than 3 km to Nee Paya (Bamboo Buddha Statue)</span
+            >
+          </p>
+        </Fragment>
+      </Content>
+
+      <Content
+        tagline=""
+        title=""
+        items={[]}
+        image={{
+          src: '/bangalow/Exterior2.jpg',
+          alt: 'Colorful Image',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">Myin Ma Hti Cave</h3>
+          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+            Distance: 7 minuts walk The winding complex of natural caves and tunnels is filled to bursting point with
+            Buddha Images in an astonishing variety of shapes and sizes. The Myin Ma Hti cave is 1028ft (313m) long from
+            the entrance.
+
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic mt-10"
+              >Pine Hill Resort is less than 3 km to Myin Ma Hti Cave</span
+            >
+          </p>
+        </Fragment>
+      </Content>
+    </div>
+  </div>
+
+  <style>
+    .parent-div:hover .img-hover {
+      transform: scale(1.3);
+    }
+    /* .img-hover {
+                    transform .2s;
+                } */
+    .parent-div {
+      /* width: 320px; */
+      /* height: 390px; */
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+</Layout>
