@@ -98,28 +98,13 @@ export const footerData = {
     { text: 'Gallery', href: getPermalink('/gallery') },
     { text: 'Reviews', href: getPermalink('/review') },
   ],
-  // socialLinks: [
-  //   {
-  //     ariaLabel: 'Agoda',
-  //     icon: 'tabler:brand-instagram',
-  //     href: 'https://www.agoda.com/pine-hill-resort/hotel/kalaw-mm.html',
-  //   },
-  //   {
-  //     ariaLabel: 'TripAdvisor',
-  //     icon: 'tabler:brand-instagram',
-  //     href: 'https://www.tripadvisor.com/Hotel_Review-g1016308-d1600275-Reviews-Pine_Hill_Resort_Kalaw-Kalaw_Shan_State.html',
-  //   },
-  //   {
-  //     ariaLabel: 'Facebook',
-  //     icon: 'tabler:brand-facebook',
-  //     href: 'https://www.facebook.com/Pine-Hill-Resort-739814942807242',
-  //   },
-  //   {
-  //     ariaLabel: 'Booking.com',
-  //     icon: 'tabler:brand-facebook',
-  //     href: 'http://www.booking.com/hotel/mm/pine-hill-resort.en-gb.html',
-  //   },
-  // ],
+  socialLinks: [
+    // {
+    //   ariaLabel: 'Facebook',
+    //   icon: 'tabler:brand-facebook',
+    //   href: 'https://www.facebook.com/Pine-Hill-Resort-739814942807242',
+    // },
+  ],
   footNote:
     '<div class="flex md:-mt-20"><a href="https://www.tripadvisor.com/Hotel_Review-g1016308-d1600275-Reviews-Pine_Hill_Resort_Kalaw-Kalaw_Shan_State.html" target="_blank" class="inline-block mr-5"><img src="/icons/tripadvisor.jpg" class="w-12 h-auto rounded" /></a> <a href="https://www.agoda.com/pine-hill-resort/hotel/kalaw-mm.html" target="_blank"  class="inline-block mr-3 bg-white pt-5 px-3 rounded"><img src="/icons/agoda.png" class="w-12 h-auto rounded" /></a> <a href="http://www.booking.com/hotel/mm/pine-hill-resort.en-gb.html" target="_blank" class="inline-block mr-3 bg-white pt-5 px-3 rounded"><img src="/icons/booking.png" class="w-12 h-auto rounded" /></a> <a href="https://www.facebook.com/Pine-Hill-Resort-739814942807242" target="_blank"  class="inline-block mr-3 bg-white pt-5 px-3 rounded"><img src="/icons/facebook.png" class="w-12 h-auto rounded" /></a></div>',
 };
