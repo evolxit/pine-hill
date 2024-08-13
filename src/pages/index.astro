@@ -14,12 +14,12 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <div class="w-full banner-area">
-    <div class="bg-black absolute w-full" style="z-index: 2; opacity:0.5"></div>
+  <div class="w-full banner-area h-auto">
+    <div class="bg-black absolute w-full hidden md:block" style="z-index: 2; opacity:0.5"></div>
     <img src="/resized/reception.jpg" class="w-full h-auto -mt-20" alt="" />
 
-    <div class="top-24 absolute w-full" style="z-index: 3;">
-      <div class="w-1/3 mx-auto">
+    <div class="top-24 absolute w-full hidden md:block" style="z-index: 3;">
+      <div class="w-1/2 lg:w-1/3 mx-auto">
         <span class="text-white text-sm block text-center bg-opacity-0 mt-20 mb-5">WELCOME TO</span>
         <span class="text-white font-bold text-4xl block text-center bg-opacity-0">PineHill Resort Kalaw</span>
         <span class="text-white text-sm block text-center bg-opacity-0 mt-5"
@@ -27,9 +27,11 @@ const metadata = {
           may see some for as low as $.17 each.</span
         >
 
-        <span
+        <a
+          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
+          target="_blank"
           class="block w-1/4 text-center px-3 py-2.5 rounded bg-primary-500 text-white font-bold text-sm mt-10 mx-auto cursor-pointer hover:bg-primary-600"
-          >GET STARTED</span
+          >GET STARTED</a
         >
       </div>
     </div>
@@ -48,13 +50,17 @@ const metadata = {
         <img
           style="transition: transform 0.8s ease;"
           src="/resized/101-indoor.jpg"
-          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          alt=""
           class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
         />
-        <span
+        <a
+          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
+          target="_blank"
           class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
-          style="top:100px; margin-left:100px">BOOK NOW</span
+          style="top:100px; margin-left:100px"
         >
+          BOOK NOW
+        </a>
         <div
           class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
         >
@@ -68,12 +74,14 @@ const metadata = {
         <img
           style="transition: transform 0.8s ease; object-fit: cover;"
           src="/resized/102-indoor.jpg"
-          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          alt=""
           class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
         />
-        <span
+        <a
+          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
+          target="_blank"
           class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
-          style="top:100px; margin-left:100px">BOOK NOW</span
+          style="top:100px; margin-left:100px">BOOK NOW</a
         >
         <div
           class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
@@ -88,12 +96,14 @@ const metadata = {
         <img
           style="transition: transform 0.8s ease; object-fit: cover;"
           src="/resized/201-indoor.jpg"
-          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          alt=""
           class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
         />
-        <span
+        <a
+          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
+          target="_blank"
           class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
-          style="top:100px; margin-left:100px">BOOK NOW</span
+          style="top:100px; margin-left:100px">BOOK NOW</a
         >
         <div
           class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
@@ -108,12 +118,14 @@ const metadata = {
         <img
           style="transition: transform 0.8s ease; object-fit: cover;"
           src="/resized/201-indoor-2.jpg"
-          alt="Img by Meriç Dağlı https://unsplash.com/@meric"
+          alt=""
           class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
         />
-        <span
+        <a
+          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
+          target="_blank"
           class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
-          style="top:100px; margin-left:100px">BOOK NOW</span
+          style="top:100px; margin-left:100px">BOOK NOW</a
         >
         <div
           class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
@@ -315,7 +327,7 @@ Also top massage for wife. Rest for breakfast was OK`,
       callToAction={{
         target: '_blank',
         text: 'More testimonials...',
-        href: 'https://github.com/onwidget/astrowind',
+        href: '/review',
         icon: 'tabler:chevron-right',
       }}
     />
@@ -340,36 +352,17 @@ Also top massage for wife. Rest for breakfast was OK`,
               alt=""
             />
           </a>
-          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white" style="height: 200px;">
+          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white">
             <a href="#">
               <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">Shwe U Min Pagoda</h5>
             </a>
             <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
               >Pine Hill Resort is less than 3 km to Shwe U Min Pagoda</span
             >
-            Read More...
-          </div>
-        </div>
-      </div>
-      <div class="max-w-sm px-3">
-        <div
-          class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 pb-10 parent-div relative"
-          style="height: 400px;"
-        >
-          <a href="#">
-            <img
-              class="rounded-t-lg img-hover"
-              style="transition: transform 0.8s ease;"
-              src="https://flowbite.com/docs/images/blog/image-1.jpg"
-              alt=""
-            />
-          </a>
-          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white" style="height: 200px;">
-            <a href="#">
-              <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">Palaung Village</h5>
-            </a>
-            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
-              >Pine Hill Resort is less than 3 km to Palaung Village</span
+            <a
+              href="/places"
+              class="text-xs hover:bg-primary-700 font-bold inline-block bg-primary-500 text-white rounded px-3 py-2"
+              >Read More...</a
             >
           </div>
         </div>
@@ -387,14 +380,48 @@ Also top massage for wife. Rest for breakfast was OK`,
               alt=""
             />
           </a>
-          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white" style="height: 200px;">
+          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white">
+            <a href="#">
+              <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">Palaung Village</h5>
+            </a>
+            <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
+              >Pine Hill Resort is less than 3 km to Palaung Village</span
+            >
+            <a
+              href="/places"
+              class="text-xs hover:bg-primary-700 font-bold inline-block bg-primary-500 text-white rounded px-3 py-2"
+              >Read More...</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="max-w-sm px-3">
+        <div
+          class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 pb-10 parent-div relative"
+          style="height: 400px;"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg img-hover"
+              style="transition: transform 0.8s ease;"
+              src="https://flowbite.com/docs/images/blog/image-1.jpg"
+              alt=""
+            />
+          </a>
+          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white">
             <a href="#">
               <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">
-                Nee Paya <span class="text-xs">(Bamboo Buddha Statue)</span>
+                Nee Paya
+                <!-- <span class="text-xs">(Bamboo Buddha Statue)</span> -->
               </h5>
             </a>
             <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
               >Pine Hill Resort is less than 3 km to Nee Paya (Bamboo Buddha Statue)</span
+            >
+            <a
+              href="/places"
+              class="text-xs hover:bg-primary-700 font-bold inline-block bg-primary-500 text-white rounded px-3 py-2"
+              >Read More...</a
             >
           </div>
         </div>
@@ -412,12 +439,17 @@ Also top massage for wife. Rest for breakfast was OK`,
               alt=""
             />
           </a>
-          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white" style="height: 200px;">
+          <div class="p-5 pt-4 absolute bottom-0 text-sm left-0 right-0 z-3 bg-white">
             <a href="#">
               <h5 class="text-gray-900 font-semibold text-lg tracking-tight mb-2">Myin Ma Hti Cave</h5>
             </a>
             <span class="text-xs inline-block rounded mb-2 px-3 py-2 border border-green-500 text-gray-500 italic"
               >Pine Hill Resort is less than 3 km to Myin Ma Hti Cave</span
+            >
+            <a
+              href="/places"
+              class="text-xs hover:bg-primary-700 font-bold inline-block bg-primary-500 text-white rounded px-3 py-2"
+              >Read More...</a
             >
           </div>
         </div>
@@ -427,7 +459,7 @@ Also top massage for wife. Rest for breakfast was OK`,
 
   <style>
     .banner-area {
-      height: 800px;
+      /* height: 800px; */
       position: relative;
       overflow: hidden;
     }

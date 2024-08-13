@@ -73,8 +73,8 @@ const {
 
   <!-- component -->
   <div class="w-full">
-    <div class="w-9/12 mx-auto">
-      <div class="text-box text-sm text-gray-500 text-justify">
+    <div class="lg:w-9/12 mx-auto">
+      <div class="px-7 text-box lg:text-sm text-gray-500 text-justify">
         At the PINE HILL RESORT (KALAW), we provide you with the best of guest facilities, ensuring your holiday is as
         smooth as possible. Our state-of-the-art fitness centre will cater to all fitness levels and it also features a
         sauna to unwind in after your work out. Our team of expert instructors are on hand at all times ensuring you
@@ -95,8 +95,8 @@ const {
         }}
       >
         <Fragment slot="content">
-          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">RESTAURANT</h3>
-          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+          <h3 class="lg:ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">RESTAURANT</h3>
+          <p class="lg:ml-10 mt-10 md:text-sm text-gray-500">
             Situated in the heart of one of Kalaw areas for dining, Pine Hill Resort has a beautiful Edwardian
             restaurant, light-filled conservatory and cosy lounge bar. Here you can enjoy a range of meals, drinks and
             snacks throughout the day, including English breakfast, Chinese Foods, Euporean Foods, Thail Foods and a
@@ -115,10 +115,10 @@ const {
         }}
       >
         <Fragment slot="content">
-          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
+          <h3 class="lg:ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
             HOT WATER SWIMMING POOL & JACUZZI
           </h3>
-          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+          <p class="lg:ml-10 mt-10 md:text-sm text-gray-500">
             Our swimming pool is the heated. The pool is heated to a constant 31 degrees Celsius, so it is always
             delightful, even on cooler days. Surrounded by sun loungers, and adjoining manicured lawns, the outdoor pool
             area is perfect where you can relax in style for sunbathing in summer. So you can enjoy a refreshing dip
@@ -138,18 +138,18 @@ const {
         }}
       >
         <Fragment slot="content">
-          <h3 class="ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
+          <h3 class="lg:ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
             FITNESS CENTER & SAUNA ROOM
           </h3>
-          <p class="ml-10 mt-10 md:text-sm text-gray-500">
+          <p class="lg:ml-10 mt-10 md:text-sm text-gray-500">
             Exclusively for our resident guests, the Fitness Center features a useful variety of state-of-the-art
             exercise equipment.
           </p>
         </Fragment>
       </Content>
 
-      <div class="w-full flex">
-        <div class="flex-1 mr-5">
+      <div class="w-full lg:flex px-7 lg:px-3">
+        <div class="flex-1 lg:mr-5">
           <span class="block bg-green-100 my-10 font-bold px-3 py-2 rounded">Facilities</span>
           <ItemGrid
             items={facilities}
@@ -165,7 +165,7 @@ const {
             }}
           />
         </div>
-        <div class="flex-1 ml-5">
+        <div class="flex-1 lg:ml-5">
           <span class="block bg-green-100 my-10 font-bold px-3 py-2 rounded">Services</span>
           <ItemGrid
             items={services}
