@@ -1,9 +1,9 @@
 ---
-import { UI } from 'astrowind:config';
+// import { UI } from 'astrowind:config';
 ---
 
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-<script is:inline define:vars={{ defaultTheme: UI.theme }}>
+<script is:inline define:vars={{ defaultTheme: 'light' }}>
   if (window.basic_script) {
     return;
   }
@@ -20,12 +20,14 @@ import { UI } from 'astrowind:config';
 
   const initTheme = function () {
     if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
-      applyTheme(defaultTheme.replace(':only', ''));
+      // applyTheme(defaultTheme.replace(':only', ''));
+      applyTheme('light');
     } else if (
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      applyTheme('dark');
+      // applyTheme('dark');
+      applyTheme('light');
     } else {
       applyTheme('light');
     }

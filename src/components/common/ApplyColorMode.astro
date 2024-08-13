@@ -6,11 +6,12 @@
 
 <script is:inline define:vars={{ defaultTheme: 'light' }}>
   function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    // if (theme === 'dark') {
+    //   document.documentElement.classList.add('dark');
+    // } else {
+    //   document.documentElement.classList.remove('dark');
+    // }
+    document.documentElement.classList.remove('dark');
     const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');
 
     if (matches && matches.length) {
@@ -21,12 +22,14 @@
   }
 
   if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'light')) {
-    applyTheme(defaultTheme.replace(':only', ''));
+    // applyTheme(defaultTheme.replace(':only', ''));
+    applyTheme('light');
   } else if (
     localStorage.theme === 'dark' ||
     (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
-    applyTheme('dark');
+    // applyTheme('dark');
+    applyTheme('light');
   } else {
     applyTheme('light');
   }
