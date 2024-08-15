@@ -1,11 +1,11 @@
 ---
-import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
+import type { Form as Props } from '~/types';
 
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form>
+<form method="post" action="https://uat-cms.evolxit.com/api/v1/mails/review/pine-hill">
   {
     inputs &&
       inputs.map(

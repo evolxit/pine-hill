@@ -1,0 +1,70 @@
+---
+import Features3 from '~/components/widgets/Features3.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Contact" title="Let's Connect!" />
+
+  <div class="lg:w-9/12 mx-auto">
+    <p class="text-center text-xl my-20 text-gray-500">
+      <span class="text-primary-500 font-bold text-3xl inline-block mb-10"
+        >Thank you! Your message has been sent successfully!</span
+      ><br /> We appreciate your feedback. If you have any further questions or need immediate assistance, feel free to reach
+      out again. Have a wonderful day!
+    </p>
+
+    <Features3
+      title="Contact Us"
+      subtitle="We’re here to help and answer any question you might have."
+      columns={4}
+      items={[
+        {
+          title: 'Phone',
+          icon: 'tabler:phone',
+          callToAction: {
+            target: '_blank',
+            text: '<span class="font-bold text-sm italic">Hotel</span><br/><span class="text-sm">+95-81-50079, 50303, 50304, <br/>+95-9-5113524, 8615992</span><br/> <span class="font-bold text-sm italic">Office</span><br/><span class="text-sm">+95-1-2304779, 2304780</span>',
+            href: '#',
+            variant: 'link',
+          },
+        },
+        {
+          title: 'Email',
+          icon: 'tabler:mail',
+          callToAction: {
+            target: '_blank',
+            text: '<span class="text-sm">pinehill.kalaw@gmail.com contact@myanmarpinehill.com</span>',
+            href: '#',
+            variant: 'link',
+          },
+        },
+        {
+          title: 'Fax',
+          icon: 'tabler:printer',
+          callToAction: {
+            target: '_blank',
+            text: '<span class="text-sm font-bold italic">Hotel</span><br/><span class="text-sm"> +95-81-50078</span> <br/> <span class="text-sm font-bold italic">Office</span><br/><span class="text-sm"> +95-1-2304780</span>',
+            href: '#',
+            variant: 'link',
+          },
+        },
+        {
+          title: 'Address',
+          icon: 'tabler:map',
+          callToAction: {
+            target: '_blank',
+            text: '<span class="text-sm font-bold italic">Hotel</span><br/><span class="text-sm">No. 151, Oo Min Road, Kalaw, Southern Shan State, Myanmar</span><br/><span class="text-sm font-bold italic">Yangon Office</span><br/><span class="text-sm">No.6, Thirimingala Street, Aungchantha Ward, Sanchaung Township, Yangon, Myanmar</span>',
+            href: '#',
+            variant: 'link',
+          },
+        },
+      ]}
+    />
+  </div>
+</Layout>
