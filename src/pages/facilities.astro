@@ -4,66 +4,56 @@ import Content from '~/components/widgets/Content.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+const token = import.meta.env.VITE_API_TOKEN;
+const base = import.meta.env.VITE_BACKEND_PATH;
+
+// Facility
+const facilityUrl = base + 'api/v1/facilities';
+const facilityResponse = await fetch(facilityUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + token,
+    'Content-Type': 'application/json',
+  },
+});
+const facilityData = await facilityResponse.json();
+const facilityList = facilityData.list;
+
+// Main Facility
+const params = new URLSearchParams({
+  is_main: 'true',
+});
+
+const mainFacilityUrl = `${facilityUrl}?${params.toString()}`;
+
+const mainFacilityResponse = await fetch(mainFacilityUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + token,
+    'Content-Type': 'application/json',
+  },
+});
+const mainFacilityData = await mainFacilityResponse.json();
+const mainFacilityList = mainFacilityData.list;
+
+// Service
+const serviceUrl = base + 'api/v1/services';
+const serviceResponse = await fetch(serviceUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + token,
+    'Content-Type': 'application/json',
+  },
+});
+const serviceData = await serviceResponse.json();
+const serviceList = serviceData.list;
+
 const metadata = {
   title: 'Facilities',
   items: [],
 };
 
-const {
-  columns = 2,
-  facilities = [
-    {
-      title: 'Complimentary Breakfast',
-    },
-    {
-      title: 'Restaurant and Bar',
-    },
-    {
-      title: 'Souvenir Shop',
-    },
-    {
-      title: 'Meeting Room',
-    },
-    {
-      title: 'Free Wifi',
-    },
-    {
-      title: 'Hot Water Swimming Pool with Jacuzzi and Pool Bar',
-    },
-    {
-      title: 'Fitness Center and Sauna Room',
-    },
-    {
-      title: 'Business Center',
-    },
-  ],
-  services = [
-    {
-      title: 'Kalaw Sightseeing',
-    },
-    {
-      title: 'Laundry Service',
-    },
-    {
-      title: 'Car Rental Service',
-    },
-    {
-      title: 'Complimentary Bicycle Service',
-    },
-    {
-      title: 'Karaoke',
-    },
-    {
-      title: 'Transportation Service',
-    },
-    {
-      title: 'Local Trekking Guide Services',
-    },
-    {
-      title: 'Spa',
-    },
-  ],
-} = Astro.props;
+const { columns = 2, facilities = facilityList, services = serviceList } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
@@ -84,69 +74,26 @@ const {
         offers a welcoming and helpful Tour desk who are always on hand to assist you in creating your perfect holiday.
       </div>
 
-      <Content
-        isReversed
-        tagline=""
-        title=""
-        items={[]}
-        image={{
-          src: '/Dinning/Dinning2.jpg',
-          alt: 'Colorful Image',
-        }}
-      >
-        <Fragment slot="content">
-          <h3 class="lg:ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">RESTAURANT</h3>
-          <p class="lg:ml-10 mt-10 md:text-sm text-gray-500">
-            Situated in the heart of one of Kalaw areas for dining, Pine Hill Resort has a beautiful Edwardian
-            restaurant, light-filled conservatory and cosy lounge bar. Here you can enjoy a range of meals, drinks and
-            snacks throughout the day, including English breakfast, Chinese Foods, Euporean Foods, Thail Foods and a
-            traditional Foods.
-          </p>
-        </Fragment>
-      </Content>
-
-      <Content
-        tagline=""
-        title=""
-        items={[]}
-        image={{
-          src: '/meeting/room1.jpg',
-          alt: 'Colorful Image',
-        }}
-      >
-        <Fragment slot="content">
-          <h3 class="lg:ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
-            HOT WATER SWIMMING POOL & JACUZZI
-          </h3>
-          <p class="lg:ml-10 mt-10 md:text-sm text-gray-500">
-            Our swimming pool is the heated. The pool is heated to a constant 31 degrees Celsius, so it is always
-            delightful, even on cooler days. Surrounded by sun loungers, and adjoining manicured lawns, the outdoor pool
-            area is perfect where you can relax in style for sunbathing in summer. So you can enjoy a refreshing dip
-            whenever you choose.
-          </p>
-        </Fragment>
-      </Content>
-
-      <Content
-        isReversed
-        tagline=""
-        title=""
-        items={[]}
-        image={{
-          src: '/bangalow/Exterior2.jpg',
-          alt: 'Colorful Image',
-        }}
-      >
-        <Fragment slot="content">
-          <h3 class="lg:ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">
-            FITNESS CENTER & SAUNA ROOM
-          </h3>
-          <p class="lg:ml-10 mt-10 md:text-sm text-gray-500">
-            Exclusively for our resident guests, the Fitness Center features a useful variety of state-of-the-art
-            exercise equipment.
-          </p>
-        </Fragment>
-      </Content>
+      {
+        mainFacilityList &&
+          mainFacilityList.map((facility, index) => (
+            <Content
+              isReversed={index % 2 == 0 ? true : false}
+              tagline=""
+              title=""
+              items={[]}
+              image={{
+                src: '/Dinning/Dinning2.jpg', // facility.image
+                alt: 'Colorful Image',
+              }}
+            >
+              <Fragment slot="content">
+                <h3 class="lg:ml-10 text-xl font-bold tracking-tight dark:text-white sm:text-2xl">{facility.title}</h3>
+                <p class="lg:ml-10 mt-10 md:text-sm text-gray-500">{facility.description}</p>
+              </Fragment>
+            </Content>
+          ))
+      }
 
       <div class="w-full lg:flex px-7 lg:px-3">
         <div class="flex-1 lg:mr-5">
@@ -189,12 +136,7 @@ const {
     .parent-div:hover .img-hover {
       transform: scale(1.3);
     }
-    /* .img-hover {
-                transform .2s;
-            } */
     .parent-div {
-      /* width: 320px; */
-      /* height: 390px; */
       overflow: hidden;
       position: relative;
     }

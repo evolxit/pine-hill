@@ -3,10 +3,66 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import RoomCard from '~/components/widgets/RoomCard.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 
+const token = import.meta.env.VITE_API_TOKEN;
+const base = import.meta.env.VITE_BACKEND_PATH;
+
+// Project
+const projectUrl = base + 'api/v1/projects/my-project';
+const response = await fetch(projectUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + token,
+    'Content-Type': 'application/json',
+  },
+});
+
+console.log('response', response);
+const data = await response.json();
+const projectData = data.project;
+
+// Rooms
+const roomUrl = base + 'api/v1/rooms';
+const roomResponse = await fetch(roomUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + token,
+    'Content-Type': 'application/json',
+  },
+});
+const roomData = await roomResponse.json();
+const rooms = roomData.list;
+
+// Facility
+const facilityUrl = base + 'api/v1/facilities';
+const facilityResponse = await fetch(facilityUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + token,
+    'Content-Type': 'application/json',
+  },
+});
+const facilityData = await facilityResponse.json();
+const facilities = facilityData.list;
+
+// Service
+const serviceUrl = base + 'api/v1/services';
+const serviceResponse = await fetch(serviceUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + token,
+    'Content-Type': 'application/json',
+  },
+});
+const serviceData = await serviceResponse.json();
+const services = serviceData.list;
+
+console.log('Home page', services);
+
 const metadata = {
-  title: 'PineHill',
+  title: projectData['name'],
   ignoreTitleTemplate: true,
 };
 ---
@@ -44,98 +100,15 @@ const metadata = {
       </p>
     </div>
 
-    <div class="lg:w-9/12 md:w-full mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-2 gap-y-10 place-items-center">
-      <div class="max-w-sm relative shadow-lg rounded-lg cursor-pointer parent-div h-80 md:w-64">
-        <img
-          style="transition: transform 0.8s ease;"
-          src="/resized/101-indoor.jpg"
-          alt=""
-          class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
-        />
-        <a
-          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
-          target="_blank"
-          class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
-          style="top:100px; margin-left:100px"
-        >
-          BOOK NOW
-        </a>
-        <div
-          class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
-        >
-          <a href="/superior"><h1 class="text-lg font-semibold text-center text-primary-500">Superior Room</h1></a>
-
-          <span class="mt-2 block"><span class="font-bold">Room Types</span>: Single / Double / Triple</span>
-          <span class="mt-2 block"><span class="font-bold">No. of Room</span>: 26 Rooms</span>
+    {
+      rooms && (
+        <div class="lg:w-9/12 md:w-full mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-2 gap-y-10 place-items-center">
+          {rooms.map((room) => (
+            <RoomCard room={room} />
+          ))}
         </div>
-      </div>
-      <div class="max-w-sm relative shadow-lg rounded-lg cursor-pointer parent-div h-80 md:w-64">
-        <img
-          style="transition: transform 0.8s ease; object-fit: cover;"
-          src="/resized/102-indoor.jpg"
-          alt=""
-          class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
-        />
-        <a
-          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
-          target="_blank"
-          class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
-          style="top:100px; margin-left:100px">BOOK NOW</a
-        >
-        <div
-          class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
-        >
-          <a href="/deluxe"><h1 class="text-lg font-semibold text-center text-primary-500">Deluxe Room</h1></a>
-
-          <span class="mt-2 block"><span class="font-bold">Room Types</span>: Single / Double / Triple</span>
-          <span class="mt-2 block"><span class="font-bold">No. of Room</span>: 33 Rooms</span>
-        </div>
-      </div>
-      <div class="max-w-sm relative shadow-lg rounded-lg cursor-pointer parent-div h-80 md:w-64">
-        <img
-          style="transition: transform 0.8s ease; object-fit: cover;"
-          src="/resized/201-indoor.jpg"
-          alt=""
-          class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
-        />
-        <a
-          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
-          target="_blank"
-          class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
-          style="top:100px; margin-left:100px">BOOK NOW</a
-        >
-        <div
-          class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
-        >
-          <a href="/royal-family"><h1 class="text-lg font-semibold text-center text-primary-500">Royal Family</h1></a>
-
-          <span class="mt-2 block"><span class="font-bold">Room Types</span>: Single</span>
-          <span class="mt-2 block"><span class="font-bold">No. of Room</span>: 1 Room</span>
-        </div>
-      </div>
-      <div class="max-w-sm relative shadow-lg rounded-lg cursor-pointer parent-div h-80 md:w-64">
-        <img
-          style="transition: transform 0.8s ease; object-fit: cover;"
-          src="/resized/201-indoor-2.jpg"
-          alt=""
-          class="w-full h-auto object-cover rounded-lg rounded-b-none img-hover"
-        />
-        <a
-          href="https://web.archive.org/web/20230929034233/https://mmhs.mmhotelsystem.com/?a=main&hid=99&cust=Pine%20Hill%20Resort"
-          target="_blank"
-          class="absolute inline-block bg-primary-500 text-white px-3 py-2 rounded text-xs drop-shadow-sm hover:bg-primary-600"
-          style="top:100px; margin-left:100px">BOOK NOW</a
-        >
-        <div
-          class="absolute bottom-0 text-sm left-0 right-0 h-40 backdrop-blur p-4 py-8 bg-gray-200 rounded-b-lg text-gray-600"
-        >
-          <a href="/royal-suite"><h1 class="text-lg font-semibold text-center text-primary-500">Royal Suite</h1></a>
-
-          <span class="mt-2 block"><span class="font-bold">Room Types</span>: Single</span>
-          <span class="mt-2 block"><span class="font-bold">No. of Room</span>: 2 Room</span>
-        </div>
-      </div>
-    </div>
+      )
+    }
   </div>
 
   <!-- Features2 Widget ************** -->
@@ -145,61 +118,7 @@ const metadata = {
       title="Royal Facilities"
       subtitle="Who are in extremely love with eco friendly system."
       tagline=""
-      items={[
-        {
-          title: 'Restaurant',
-          description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-          icon: 'flat-color-icons:template',
-        },
-        {
-          title: 'Bar',
-          description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-          icon: 'flat-color-icons:currency-exchange',
-        },
-        {
-          title: 'Souvenir Shop',
-          description:
-            "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-          icon: 'flat-color-icons:document',
-        },
-        {
-          title: 'Fitness Center',
-          description:
-            "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-          icon: 'flat-color-icons:gallery',
-        },
-        {
-          title: 'Suana Room',
-          description:
-            'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-          icon: 'flat-color-icons:advertising',
-        },
-        {
-          title: 'Swimming Pool',
-          description:
-            'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-          icon: 'flat-color-icons:approval',
-        },
-
-        {
-          title: 'Meeting Room',
-          description:
-            "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-          icon: 'flat-color-icons:document',
-        },
-        {
-          title: 'Free Wifi',
-          description:
-            "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-          icon: 'flat-color-icons:document',
-        },
-        {
-          title: 'Business Center',
-          description:
-            "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-          icon: 'flat-color-icons:document',
-        },
-      ]}
+      items={facilities}
     >
       <Fragment slot="bg">
         <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -240,40 +159,7 @@ const metadata = {
 
   <Content
     isAfterContent
-    items={[
-      {
-        title: 'Kalaw Sightseeing',
-        description: ``,
-      },
-      {
-        title: 'Laundry Service',
-        description: '',
-      },
-      {
-        title: 'Car Rental Service',
-        description: '',
-      },
-      {
-        title: 'Complimentary Bicycle Service',
-        description: '',
-      },
-      {
-        title: 'Karaoke',
-        description: '',
-      },
-      {
-        title: 'Transportation Service',
-        description: '',
-      },
-      {
-        title: 'Local Trekking Guide Services',
-        description: '',
-      },
-      {
-        title: 'Spa',
-        description: '',
-      },
-    ]}
+    items={services}
     image={{
       src: '/Dinning/Dinning1.jpg',
       alt: 'Blueprint Image',
@@ -295,8 +181,8 @@ const metadata = {
       testimonials={[
         {
           testimonial: `Pleasant surprise large rooms top shower & other facilities. I believe we were in newer rooms
-Heated pool , clean & a good base to look around Kalaw.
-Also top massage for wife. Rest for breakfast was OK`,
+            Heated pool , clean & a good base to look around Kalaw.
+            Also top massage for wife. Rest for breakfast was OK`,
           name: 'Su T. of New Zealand',
           job: 'September 2015',
           image: {
@@ -306,8 +192,8 @@ Also top massage for wife. Rest for breakfast was OK`,
         },
         {
           testimonial: `Pleasant surprise large rooms top shower & other facilities. I believe we were in newer rooms
-Heated pool , clean & a good base to look around Kalaw.
-Also top massage for wife. Rest for breakfast was OK`,
+            Heated pool , clean & a good base to look around Kalaw.
+            Also top massage for wife. Rest for breakfast was OK`,
           name: 'Sarah Hansen',
           job: 'Photographer',
           image: {
@@ -471,8 +357,8 @@ Also top massage for wife. Rest for breakfast was OK`,
       transform: scale(1.3);
     }
     /* .img-hover {
-            transform .2s;
-        } */
+                        transform .2s;
+                    } */
     .parent-div {
       /* width: 320px; */
       /* height: 390px; */

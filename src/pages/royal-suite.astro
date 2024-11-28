@@ -3,96 +3,38 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Room from '~/components/widgets/Room.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+const token = import.meta.env.VITE_API_TOKEN;
+const base = import.meta.env.VITE_BACKEND_PATH;
+
+const baseUrl = base + 'api/v1/rooms/royal-suite';
+
+const response = await fetch(baseUrl, {
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + token,
+    'Content-Type': 'application/json',
+  },
+});
+
+const data = await response.json();
+const allData = data.data;
+
 const {
   metadata = {
-    title: 'Royal Suite Rooms',
+    title: allData['name'],
     items: [],
   },
+  title = allData['name'],
   columns = 2,
-  amenities = [
-    {
-      title: '2 Rooms',
-      description: ``,
-    },
-    {
-      title: 'Free Wi-Fi',
-      description: '',
-    },
-    {
-      title: 'Electronic Room Keys',
-      description: '',
-    },
-    {
-      title: 'Mini-bar',
-      description: '',
-    },
-    {
-      title: 'In-Room Safe Deposit Box',
-      description: '',
-    },
-    {
-      title: 'Home Theater (In Suite Only)',
-      description: '',
-    },
-    {
-      title: 'Refrigerator',
-      description: '',
-    },
-    {
-      title: 'Jaccuzi (In Suite Only)',
-      description: '',
-    },
-    {
-      title: 'Sauna (In Suite Only)',
-      description: '',
-    },
-    {
-      title: 'IDD Telephone',
-      description: '',
-    },
-    {
-      title: 'Complimentary Bottled Water',
-      description: '',
-    },
-    {
-      title: 'Coffee and Tea Making Facility',
-      description: '',
-    },
-    {
-      title: '24 hr Room Service',
-      description: '',
-    },
-  ],
-  features = [
-    {
-      title: 'Each rooms included LCD TV With International Satellite TV Channels',
-      description: ``,
-    },
-    {
-      title: 'All rooms are spacious and fully decorated with quality species of Myanmar wood',
-      description: '',
-    },
-    {
-      title: 'Two Way Air Conditioner (Hot and Cold)',
-      description: '',
-    },
-    {
-      title: '24 Hr Hot and Cold Running Water with full set of complimentary bathroom amenities',
-      description: '',
-    },
-  ],
-  rooms = [
-    { src: '/bangalow/201-indoor-2.jpg' },
-    { src: '/bangalow/201-indoor-2.jpg' },
-    { src: '/bangalow/201-indoor-2.jpg' },
-    { src: '/bangalow/201-indoor-2.jpg' },
-  ],
-  description = 'Royal Suite Room offered generous room sizes with 2 beds and sitting sofa can accommodate up to 3 people, along with sheer elegance and an excellent view of Tropical fruit garden and organic vegetable garden.',
+  amenities = allData['amenities'],
+  features = allData['features'],
+  rooms = allData['photos'],
+  description = allData['description'],
 } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
-  <HeroText tagline="Rooms" title="Royal Suite Rooms" subtitle="" />
+  <HeroText tagline="Rooms" title={title} subtitle="" />
 
   <!-- component -->
   <Room description={description} rooms={rooms} amenities={amenities} features={features} columns={columns} />
