@@ -19,7 +19,6 @@ const response = await fetch(projectUrl, {
   },
 });
 
-console.log('response', response);
 const data = await response.json();
 const projectData = data.project;
 
@@ -58,8 +57,6 @@ const serviceResponse = await fetch(serviceUrl, {
 });
 const serviceData = await serviceResponse.json();
 const services = serviceData.list;
-
-console.log('Home page', services);
 
 const metadata = {
   title: projectData['name'],
