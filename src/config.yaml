@@ -11,14 +11,14 @@ metadata:
   title:
     default: PineHill
     template: '%s — PineHill'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: 'Welcome to Pine Hill Resort Kalaw. We are a family run hotel in Kalaw, Myanmar. We offer a range of rooms and services to suit all budgets. We are located in the heart of Kalaw, close to the market and restaurants. We are a family run hotel in Kalaw, Myanmar. We offer a range of rooms and services to suit all budgets. We are located in the heart of Kalaw, close to the market and restaurants.'
   robots:
     index: true
     follow: true
   openGraph:
     site_name: PineHill
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/Pine Hill Resort.jpeg'
         width: 1200
         height: 628
     type: website
