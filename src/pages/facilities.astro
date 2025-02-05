@@ -1,6 +1,6 @@
 ---
 import ItemGrid from '~/components/ui/ItemGrid.astro';
-import Content from '~/components/widgets/Content.astro';
+// import Content from '~/components/widgets/Content.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -74,7 +74,7 @@ const { columns = 2, facilities = facilityList, services = serviceList } = Astro
         offers a welcoming and helpful Tour desk who are always on hand to assist you in creating your perfect holiday.
       </div>
 
-      {
+      <!-- {
         mainFacilityList &&
           mainFacilityList.map((facility, index) => (
             <Content
@@ -83,8 +83,8 @@ const { columns = 2, facilities = facilityList, services = serviceList } = Astro
               title=""
               items={[]}
               image={{
-                src: '/resized/Dinning2.jpg', // facility.image
-                alt: 'Colorful Image',
+                src: facility.image, // facility.image
+                alt: facility.title, // facility.title
               }}
             >
               <Fragment slot="content">
@@ -93,7 +93,34 @@ const { columns = 2, facilities = facilityList, services = serviceList } = Astro
               </Fragment>
             </Content>
           ))
-      }
+      } -->
+
+      <div class="space-y-16 py-10">
+        {
+          mainFacilityList &&
+            mainFacilityList.map((facility, index) => (
+              <div
+                class={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center gap-8`}
+              >
+                <div class="md:w-1/2">
+                  {/* <Image src={facility.image} alt={facility.title} class="w-full rounded-lg shadow-lg" /> */}
+                  <div class="relative shadow-lg rounded-lg cursor-pointer parent-div h-auto md:w-96 lg:w-full">
+                    <img
+                      style="transition: transform 0.8s ease;"
+                      src={facility.image}
+                      alt={facility.title}
+                      class="w-full h-auto object-cover rounded img-hover"
+                    />
+                  </div>
+                </div>
+                <div class="md:w-1/2">
+                  <h3 class="text-2xl font-bold tracking-tight dark:text-white">{facility.title}</h3>
+                  <p class="mt-4 text-gray-500">{facility.description}</p>
+                </div>
+              </div>
+            ))
+        }
+      </div>
 
       <div class="w-full lg:flex px-7 lg:px-3">
         <div class="flex-1 lg:mr-5">
